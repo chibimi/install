@@ -1,0 +1,2 @@
+install Go
+sudo apt-get install golang-1.6

@@ -1,0 +1,17 @@
+#change login screen
+#maybe optional
+sudo aura -S sddm-kcm 
+sudo nano /etc/sddm.conf
+set Current = breeze
+
+#auto login kde wallet (if same password as user)
+sudo aura -S kwallet-pam
+sudo nano /etc/pam.d/sddm
+
+#change content with 
+auth            include         system-login
+-auth            optional        pam_kwallet5.so
+account         include         system-login
+password        include         system-login
+session         include         system-login
+-session         optional        pam_kwallet5.so
